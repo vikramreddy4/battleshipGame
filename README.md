@@ -1,2 +1,2 @@
 # battleshipGame
-Battle ship game implementstion
+Battle ship game implementation
