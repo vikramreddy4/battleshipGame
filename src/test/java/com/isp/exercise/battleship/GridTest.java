@@ -18,6 +18,17 @@ public class GridTest {
 	}
 
 	@Test
+	public void test_Grid_Ships_Overlapped_Locations() throws Exception {
+	    String[] directions = {Ship.DIRECTION_LEFT,Ship.DIRECTION_LEFT,Ship.DIRECTION_LEFT,Ship.DIRECTION_LEFT};
+	    int[] xCoordinates = {1,3,3,7};
+	    int[] yCoordinates = {1,1,1,1};
+	    int[] sizes = {2,3,4,5};
+	    
+	    Grid grid = new Grid();
+	    Assert.assertFalse(grid.setupShips(directions, xCoordinates, yCoordinates, sizes));
+	}
+
+	@Test
 	public void test_Grid_Ships_Count() throws Exception {
 	    String[] directions = {Ship.DIRECTION_LEFT,Ship.DIRECTION_LEFT,Ship.DIRECTION_LEFT,Ship.DIRECTION_LEFT};
 	    int[] xCoordinates = {1,3,5,7};
@@ -25,7 +36,7 @@ public class GridTest {
 	    int[] sizes = {2,3,4,5};
 	    
 	    Grid grid = new Grid();
-	    grid.setupShips(directions, xCoordinates, yCoordinates, sizes);
+	    Assert.assertTrue(grid.setupShips(directions, xCoordinates, yCoordinates, sizes));
 		Assert.assertTrue(grid != null);
 		Assert.assertTrue(grid.getShips() != null);
 		Assert.assertTrue(grid.getShips().size() == sizes.length);
@@ -39,7 +50,7 @@ public class GridTest {
 	    int[] sizes = {2,3,4,5};
 	    
 	    Grid grid = new Grid();
-	    grid.setupShips(directions, xCoordinates, yCoordinates, sizes);
+	    Assert.assertTrue(grid.setupShips(directions, xCoordinates, yCoordinates, sizes));
 		Assert.assertTrue(grid != null);
 		Assert.assertTrue(grid.getShips() != null);
 		Assert.assertTrue(grid.getShips().size() == sizes.length);
@@ -56,7 +67,7 @@ public class GridTest {
 	    int[] sizes = {2,3,4,5};
 	    
 	    Grid grid = new Grid();
-	    grid.setupShips(directions, xCoordinates, yCoordinates, sizes);
+	    Assert.assertTrue(grid.setupShips(directions, xCoordinates, yCoordinates, sizes));
 		Assert.assertTrue(grid != null);
 		Assert.assertTrue(grid.getShips() != null);
 		Assert.assertTrue(grid.getShips().size() == sizes.length);
@@ -77,7 +88,7 @@ public class GridTest {
 	    int[] sizes = {2,3,4,5};
 	    
 	    Grid grid = new Grid();
-	    grid.setupShips(directions, xCoordinates, yCoordinates, sizes);
+	    Assert.assertTrue(grid.setupShips(directions, xCoordinates, yCoordinates, sizes));
 		Assert.assertTrue(grid != null);
 		Assert.assertTrue(grid.getShips() != null);
 		Assert.assertTrue(grid.getShips().size() == sizes.length);

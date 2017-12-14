@@ -3,8 +3,6 @@ package com.isp.exercise;
 import java.util.HashSet;
 import java.util.Set;
 
-import javax.management.ImmutableDescriptor;
-
 public class Ship {
 	
 	public static String DIRECTION_LEFT = "LEFT";
@@ -25,7 +23,7 @@ public class Ship {
 		this.headY = headY;
 	}
 	
-	public boolean setupLocations() {
+	public boolean setupLocations(Set<Location> otherShipsOccupiedLocations) {
 		if(locations == null) {
 			locations = new HashSet<Location>();
 		}
@@ -52,11 +50,15 @@ public class Ship {
 				}
 			}
 			Location location = new Location(x,y);
-			if(location.isValid()) {
-				locations.add(location);
-			}else {
+			if(!location.isValid()) {
+				System.out.println("Invalid location, please check location properties for location : "+location.toString());
 				return false;
 			}
+			if(otherShipsOccupiedLocations.contains(location)) {
+				System.out.println("Invalid location, This location is already occupied by another Ship : "+location.toString());
+				return false;
+			}
+			locations.add(location);
 		}
 		System.out.println("Setup complete for Ship with locations "+locations.toString());
 		return true;

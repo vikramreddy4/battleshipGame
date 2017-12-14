@@ -30,8 +30,6 @@ public class BattleshipGame {
         
         System.out.println("SETUP SUCCESSFULL. PRESS 'Q' to quit at any stage.");
         reader.nextLine();
-        reader.nextLine();
-        System.out.println("\nCOMPUTER GRID (FOR DEBUG)...");
         
         while(true) {
         	System.out.print("Type (1-10) for the row you want to hit : ");

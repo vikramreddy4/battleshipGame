@@ -11,6 +11,7 @@ public class Grid {
 	private Set<Location> unoccupiedLocations;
 
 	public boolean setupShips(String[] directions, int[] headXCoordinates, int[] headYCoordinates, int[] shipSizes) {
+		Set<Location> shipOccupiedLocations = new HashSet<Location>();
 		if(ships == null) {
 			ships = new ArrayList<Ship>();
 		}
@@ -20,9 +21,10 @@ public class Grid {
 		}
 		for(int i = 0; i < shipSizes.length;i++) {
 			Ship ship = new Ship(directions[i], shipSizes[i], headXCoordinates[i], headYCoordinates[i]);
-			if(!ship.setupLocations()) {
+			if(!ship.setupLocations(shipOccupiedLocations)) {
 				return false;
 			}
+			shipOccupiedLocations.addAll(ship.getLocations());
 			ships.add(ship);
 		}
 		return true;

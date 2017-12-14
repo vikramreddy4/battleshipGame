@@ -3,16 +3,16 @@ package com.isp.exercise;
 public class Location {
 	private static int MAX_X = 10;
 	private static int MAX_Y = 10;
-	
+
 	private int x;
 	private int y;
 	private boolean hit;
-	
+
 	public Location(int x, int y) {
 		this.x = x;
 		this.y = y;
 	}
-	
+
 	public Location(int x, int y, boolean hit) {
 		this.x = x;
 		this.y = y;
@@ -20,31 +20,49 @@ public class Location {
 	}
 
 	public boolean isValid() {
-		if(x > MAX_X || x < 1 || y > MAX_Y || y < 1) {
+		if (x > MAX_X || x < 1 || y > MAX_Y || y < 1) {
 			return false;
 		}
 		return true;
 	}
-	
+
+	@Override
+	public boolean equals(Object o) {
+		if (o instanceof Location) {
+			return (this.x == (((Location) o).getX()) && this.y == (((Location) o).getY()));
+		}
+		return false;
+	}
+
+	@Override
+	public int hashCode() {
+		return Integer.parseInt(Integer.toString(x) + Integer.toString(y));
+	}
+
 	public void markAsHit() {
 		this.hit = true;
 	}
-	
+
 	public int getX() {
 		return x;
 	}
+
 	public void setX(int x) {
 		this.x = x;
 	}
+
 	public int getY() {
 		return y;
 	}
+
 	public void setY(int y) {
 		this.y = y;
 	}
+
 	public boolean isHit() {
 		return hit;
 	}
+
 	public void setHit(boolean hit) {
 		this.hit = hit;
 	}
@@ -53,5 +71,5 @@ public class Location {
 	public String toString() {
 		return "Location [x=" + x + ", y=" + y + ", hit=" + hit + "]";
 	}
-	
+
 }
