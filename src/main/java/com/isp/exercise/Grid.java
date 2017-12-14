@@ -1,4 +1,4 @@
-package com.isp.example;
+package com.isp.exercise;
 
 import java.util.ArrayList;
 import java.util.HashSet;

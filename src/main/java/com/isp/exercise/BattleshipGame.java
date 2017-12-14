@@ -1,4 +1,4 @@
-package com.isp.example;
+package com.isp.exercise;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -10,12 +10,12 @@ public class BattleshipGame {
 	public static void main(String[] args) {
 		System.out.println("BATTLESHIP GAME STARTING ...");  
         
-        String[] userShipDirections = {"LEFT","LEFT","LEFT","LEFT"};
+        String[] userShipDirections = {Ship.DIRECTION_LEFT,Ship.DIRECTION_LEFT,Ship.DIRECTION_LEFT,Ship.DIRECTION_LEFT};
         int[] userShipXCoordinates = {1,3,5,7};
         int[] userShipYCoordinates = {1,1,1,1};
         int[] userShipSizes = {2,3,4,5};
         
-        String[] computerShipDirections = {"LEFT","LEFT","LEFT","LEFT"};
+        String[] computerShipDirections = {Ship.DIRECTION_LEFT,Ship.DIRECTION_LEFT,Ship.DIRECTION_LEFT,Ship.DIRECTION_LEFT};
         int[] computerShipXCoordinates = {1,3,5,7};
         int[] computerShipYCoordinates = {1,1,1,1};
         int[] computerShipSizes = {2,3,4,5};

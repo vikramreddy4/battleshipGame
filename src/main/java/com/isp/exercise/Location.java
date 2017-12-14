@@ -1,4 +1,4 @@
-package com.isp.example;
+package com.isp.exercise;
 
 public class Location {
 	private static int MAX_X = 10;

@@ -1,9 +1,16 @@
-package com.isp.example;
+package com.isp.exercise;
 
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.management.ImmutableDescriptor;
+
 public class Ship {
+	
+	public static String DIRECTION_LEFT = "LEFT";
+	public static String DIRECTION_BOTTOM = "BOTTOM";
+	public static String DIRECTION_TOP = "TOP";
+	public static String DIRECTION_RIGHT = "RIGHT";
 	
 	private Set<Location> locations;
 	private String direction;
@@ -22,16 +29,26 @@ public class Ship {
 		if(locations == null) {
 			locations = new HashSet<Location>();
 		}
+		if(direction == null) {
+			direction = DIRECTION_LEFT;
+		}
+		if(length == 0 || headX < 1 || headX > 10 || headY < 1 || headY > 10) {
+			return false;
+		}
 		for(int i = 0, x = headX,y=headY;i<length;i++) {
 			if(i > 0) {
-				if(direction == "LEFT") {
+				if(direction == DIRECTION_LEFT) {
 					y++;
-				}else if(direction == "RIGHT") {
+				}else if(direction == DIRECTION_RIGHT) {
 					y--;
-				}else if(direction == "TOP") {
+				}else if(direction == DIRECTION_TOP) {
 					x++;
-				}else if(direction == "BOTTOM") {
+				}else if(direction == DIRECTION_BOTTOM) {
 					x--;
+				}else {
+					// soft validation for unknown / unrecognized value
+					direction = DIRECTION_LEFT;
+					y++;
 				}
 			}
 			Location location = new Location(x,y);
