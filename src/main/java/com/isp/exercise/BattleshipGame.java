@@ -40,6 +40,7 @@ public class BattleshipGame {
         	}
         	if(GameUtil.isValidInput(input)) {
             	int[] coordinates = GameUtil.extractCoordinates(input);
+            	System.out.println("###########################################################################################################");
             	System.out.println(String.format("Hitting the coordinates %s %s on Computer's Grid", coordinates[0], coordinates[1]));
         		if(GameUtil.isValidLocation(coordinates[0], coordinates[1])) {
                 	if(computerGrid.hit(coordinates[0], coordinates[1])) {
@@ -50,6 +51,7 @@ public class BattleshipGame {
                     	}
                 	}
                 	computerGrid.printHitPercentageOfAllShips();
+                	System.out.println("----------------------------------------------------------------------------------------------------------");
                 	int[] coordinatesRamdom = GameUtil.extractRandomCoordinates();
                 	System.out.println(String.format("Hitting the random picked coordinates %s %s on User's Grid", coordinatesRamdom[0], coordinatesRamdom[1]));
                 	if(userGrid.hit(coordinatesRamdom[0], coordinatesRamdom[1])) {
@@ -61,6 +63,7 @@ public class BattleshipGame {
                 	}
                 	userGrid.printHitPercentageOfAllShips();
         		}
+            	System.out.println("###########################################################################################################");
     		}else {
     			System.out.println(String.format("%s is an Invalid value !!!! Please enter a valid one.", input));
     		}
