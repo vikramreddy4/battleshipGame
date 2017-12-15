@@ -25,7 +25,7 @@ public class GridTest {
 	    int[] yCoordinates = {1,1,1,1};
 	    int[] sizes = {2,3,4,5};
 	    
-	    Grid grid = new Grid();
+	    Grid grid = new Grid("");
 	    Assert.assertFalse(grid.setupShips(directions, xCoordinates, yCoordinates, sizes));
 	}
 
@@ -36,7 +36,7 @@ public class GridTest {
 	    int[] yCoordinates = {1,1,1,1};
 	    int[] sizes = {2,3,4,5};
 	    
-	    Grid grid = new Grid();
+	    Grid grid = new Grid("");
 	    Assert.assertTrue(grid.setupShips(directions, xCoordinates, yCoordinates, sizes));
 		Assert.assertTrue(grid != null);
 		Assert.assertTrue(grid.getShips() != null);
@@ -50,7 +50,7 @@ public class GridTest {
 	    int[] yCoordinates = {1,1,1,1};
 	    int[] sizes = {2,3,4,5};
 	    
-	    Grid grid = new Grid();
+	    Grid grid = new Grid("");
 	    Assert.assertTrue(grid.setupShips(directions, xCoordinates, yCoordinates, sizes));
 		Assert.assertTrue(grid != null);
 		Assert.assertTrue(grid.getShips() != null);
@@ -67,7 +67,7 @@ public class GridTest {
 	    int[] yCoordinates = {1,1,1,1};
 	    int[] sizes = {2,3,4,5};
 	    
-	    Grid grid = new Grid();
+	    Grid grid = new Grid("");
 	    Assert.assertTrue(grid.setupShips(directions, xCoordinates, yCoordinates, sizes));
 		Assert.assertTrue(grid != null);
 		Assert.assertTrue(grid.getShips() != null);
@@ -88,7 +88,7 @@ public class GridTest {
 	    int[] yCoordinates = {1,1,1,1};
 	    int[] sizes = {2,3,4,5};
 	    
-	    Grid grid = new Grid();
+	    Grid grid = new Grid("");
 	    Assert.assertTrue(grid.setupShips(directions, xCoordinates, yCoordinates, sizes));
 		Assert.assertTrue(grid != null);
 		Assert.assertTrue(grid.getShips() != null);

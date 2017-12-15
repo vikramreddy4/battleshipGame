@@ -7,8 +7,13 @@ import java.util.Set;
 
 public class Grid {
 	
+	private String name;
 	private List<Ship> ships;
 
+	public Grid(String name) {
+		this.name = name;
+	}
+	
 	/**
 	 * Set up the ships for the Grid.
 	 * @param directions
@@ -46,11 +51,11 @@ public class Grid {
 	public boolean hit(int x, int y) {
 		for(Ship ship : ships) {
 			if(ship.hit(x, y)) {
-				System.out.println("SUCCESS !!! YOU HIT THE SHIP.");
+				System.out.println(String.format(" ==>> %s's Ship was HIT !!!!!!!!!!!!!!!!", name));
 				return true;
 			}
 		}
-		System.out.println("MISSED.");
+		System.out.println(" ==>> MISSED.");
 		return false;
 	}
 	
@@ -71,7 +76,7 @@ public class Grid {
 	 * Get the percentage hit for each ship on the Grid board. 
 	 */
 	public void printHitPercentageOfAllShips() {
-		System.out.print("Hit % for ships : ");
+		System.out.print(String.format("Hit percentage for ships on %s's grid : ", name));
 		for(Ship ship : ships) {
 			System.out.print(ship.getHitPercentage());
 			System.out.print(" , ");
@@ -85,6 +90,14 @@ public class Grid {
 
 	public void setShips(List<Ship> ships) {
 		this.ships = ships;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 }
