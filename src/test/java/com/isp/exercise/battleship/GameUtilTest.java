@@ -92,4 +92,15 @@ public class GameUtilTest {
 		Assert.assertTrue(coordinates[0] == 10);
 		Assert.assertTrue(coordinates[1] == 10);
 	}
+
+	@Test
+	public void testExtractRandomCoordinates() throws Exception {
+		for(int i = 0;i<100;i++) {
+			int[] coordinates = GameUtil.extractRandomCoordinates();
+			Assert.assertTrue(coordinates.length == 2);
+			Assert.assertTrue(coordinates[0] > 0 && coordinates[0] <= 100);
+			Assert.assertTrue(coordinates[1] > 0 && coordinates[1] <= 100);
+		}
+	}
+
 }

@@ -54,6 +54,10 @@ public class Grid {
 		return false;
 	}
 	
+	/**
+	 * Check if all the ships are hit on this Grid.
+	 * @return
+	 */
 	public boolean areShipsCompletelyHit() {
 		for(Ship ship : ships) {
 			if(!ship.isShipCompletelyHit()) {
@@ -63,6 +67,9 @@ public class Grid {
 		return true;
 	}
 	
+	/**
+	 * Get the percentage hit for each ship on the Grid board. 
+	 */
 	public void printHitPercentageOfAllShips() {
 		System.out.print("Hit % for ships : ");
 		for(Ship ship : ships) {
@@ -80,12 +87,4 @@ public class Grid {
 		this.ships = ships;
 	}
 
-//	public Set<Location> getUnoccupiedLocations() {
-//		return unoccupiedLocations;
-//	}
-//
-//	public void setUnoccupiedLocations(Set<Location> unoccupiedLocations) {
-//		this.unoccupiedLocations = unoccupiedLocations;
-//	}
-	
 }

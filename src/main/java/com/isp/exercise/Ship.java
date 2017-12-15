@@ -18,6 +18,11 @@ public class Ship {
 		this.headY = headY;
 	}
 	
+	/**
+	 * Set up locations
+	 * @param otherShipsOccupiedLocations
+	 * @return
+	 */
 	public boolean setupLocations(Set<Location> otherShipsOccupiedLocations) {
 		if(locations == null) {
 			locations = new HashSet<Location>();
@@ -59,6 +64,12 @@ public class Ship {
 		return true;
 	}
 	
+	/**
+	 * Record hit and take action - Identify if this ship is hit.
+	 * @param x
+	 * @param y
+	 * @return
+	 */
 	public boolean hit(int x, int y) {
 		if(locations != null) {
 			for(Location location : locations) {
@@ -73,6 +84,10 @@ public class Ship {
 		return false;
 	}
 
+	/**
+	 * Check if this ship is completely hit.
+	 * @return
+	 */
 	public boolean isShipCompletelyHit() {
 		if(locations != null) {
 			for(Location location : locations) {
@@ -84,6 +99,10 @@ public class Ship {
 		return true;
 	}
 
+	/**
+	 * Get hot percentage for this Ship.
+	 * @return
+	 */
 	public double getHitPercentage() {
 		int totalLocations = locations.size();
 		int hitLocations = 0;
