@@ -7,6 +7,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import com.isp.exercise.GameUtil;
 import com.isp.exercise.Location;
 import com.isp.exercise.Ship;
 
@@ -64,28 +65,28 @@ public class ShipTest {
 	@Test public void test_Ship_With_Length_BOTTOM_10() throws Exception { testSuccessDirectionBOTTOM_X_Y_10_5(10); }
 
 	private void testSuccessDirectionLEFT_X_Y_5_1(int length) {
-		Ship ship = new Ship(Ship.DIRECTION_LEFT,length, 5 , 1);
+		Ship ship = new Ship(GameUtil.DIRECTION_LEFT,length, 5 , 1);
 		Assert.assertTrue(ship.setupLocations(new HashSet<Location>()));
 		Assert.assertTrue(ship.getLocations() != null);
 		Assert.assertTrue(ship.getLocations().size() == length);
 	}
 	
 	private void testSuccessDirectionRIGHT_X_Y_5_10(int length) {
-		Ship ship = new Ship(Ship.DIRECTION_RIGHT,length, 5 , 10);
+		Ship ship = new Ship(GameUtil.DIRECTION_RIGHT,length, 5 , 10);
 		Assert.assertTrue(ship.setupLocations(new HashSet<Location>()));
 		Assert.assertTrue(ship.getLocations() != null);
 		Assert.assertTrue(ship.getLocations().size() == length);
 	}
 
 	private void testSuccessDirectionTOP_X_Y_1_5(int length) {
-		Ship ship = new Ship(Ship.DIRECTION_TOP,length, 1 , 5);
+		Ship ship = new Ship(GameUtil.DIRECTION_TOP,length, 1 , 5);
 		Assert.assertTrue(ship.setupLocations(new HashSet<Location>()));
 		Assert.assertTrue(ship.getLocations() != null);
 		Assert.assertTrue(ship.getLocations().size() == length);
 	}
 	
 	private void testSuccessDirectionBOTTOM_X_Y_10_5(int length) {
-		Ship ship = new Ship(Ship.DIRECTION_BOTTOM,length, 10 , 5);
+		Ship ship = new Ship(GameUtil.DIRECTION_BOTTOM,length, 10 , 5);
 		Assert.assertTrue(ship.setupLocations(new HashSet<Location>()));
 		Assert.assertTrue(ship.getLocations() != null);
 		Assert.assertTrue(ship.getLocations().size() == length);
@@ -93,27 +94,27 @@ public class ShipTest {
 
 	@Test
 	public void test_Ship_Failure_X_Y_0_0() throws Exception {
-		Ship ship = new Ship(Ship.DIRECTION_LEFT,2, 0 , 0);
+		Ship ship = new Ship(GameUtil.DIRECTION_LEFT,2, 0 , 0);
 		Assert.assertFalse(ship.setupLocations(new HashSet<Location>()));
 	}
 
 	@Test
 	public void test_Ship_Failure_Length_0() throws Exception {
-		Ship ship = new Ship(Ship.DIRECTION_LEFT,0, 1 , 1);
+		Ship ship = new Ship(GameUtil.DIRECTION_LEFT,0, 1 , 1);
 		Assert.assertFalse(ship.setupLocations(new HashSet<Location>()));
 	}
 
 	@Test
 	public void test_Ship_With_Length_2_Failure() throws Exception {
 		int length = 2;
-		Ship ship = new Ship(Ship.DIRECTION_RIGHT,length, 1 , 1);
+		Ship ship = new Ship(GameUtil.DIRECTION_RIGHT,length, 1 , 1);
 		Assert.assertFalse(ship.setupLocations(new HashSet<Location>()));
 	}
 
 	@Test
 	public void test_Ship_With_Length_3_Failure() throws Exception {
 		int length = 2;
-		Ship ship = new Ship(Ship.DIRECTION_RIGHT,length, 1 , 1);
+		Ship ship = new Ship(GameUtil.DIRECTION_RIGHT,length, 1 , 1);
 		Assert.assertFalse(ship.setupLocations(new HashSet<Location>()));
 	}
 }

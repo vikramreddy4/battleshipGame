@@ -1,9 +1,6 @@
 package com.isp.exercise;
 
 public class Location {
-	private static int MAX_X = 10;
-	private static int MAX_Y = 10;
-
 	private int x;
 	private int y;
 	private boolean hit;
@@ -20,10 +17,7 @@ public class Location {
 	}
 
 	public boolean isValid() {
-		if (x > MAX_X || x < 1 || y > MAX_Y || y < 1) {
-			return false;
-		}
-		return true;
+		return GameUtil.isValidLocation(x, y);
 	}
 
 	@Override

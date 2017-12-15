@@ -5,6 +5,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import com.isp.exercise.GameUtil;
 import com.isp.exercise.Grid;
 import com.isp.exercise.Ship;
 
@@ -19,7 +20,7 @@ public class GridTest {
 
 	@Test
 	public void test_Grid_Ships_Overlapped_Locations() throws Exception {
-	    String[] directions = {Ship.DIRECTION_LEFT,Ship.DIRECTION_LEFT,Ship.DIRECTION_LEFT,Ship.DIRECTION_LEFT};
+	    String[] directions = {GameUtil.DIRECTION_LEFT,GameUtil.DIRECTION_LEFT,GameUtil.DIRECTION_LEFT,GameUtil.DIRECTION_LEFT};
 	    int[] xCoordinates = {1,3,3,7};
 	    int[] yCoordinates = {1,1,1,1};
 	    int[] sizes = {2,3,4,5};
@@ -30,7 +31,7 @@ public class GridTest {
 
 	@Test
 	public void test_Grid_Ships_Count() throws Exception {
-	    String[] directions = {Ship.DIRECTION_LEFT,Ship.DIRECTION_LEFT,Ship.DIRECTION_LEFT,Ship.DIRECTION_LEFT};
+	    String[] directions = {GameUtil.DIRECTION_LEFT,GameUtil.DIRECTION_LEFT,GameUtil.DIRECTION_LEFT,GameUtil.DIRECTION_LEFT};
 	    int[] xCoordinates = {1,3,5,7};
 	    int[] yCoordinates = {1,1,1,1};
 	    int[] sizes = {2,3,4,5};
@@ -44,7 +45,7 @@ public class GridTest {
 
 	@Test
 	public void test_Grid_Ships_Hit_Zero_Percentage() throws Exception {
-	    String[] directions = {Ship.DIRECTION_LEFT,Ship.DIRECTION_LEFT,Ship.DIRECTION_LEFT,Ship.DIRECTION_LEFT};
+	    String[] directions = {GameUtil.DIRECTION_LEFT,GameUtil.DIRECTION_LEFT,GameUtil.DIRECTION_LEFT,GameUtil.DIRECTION_LEFT};
 	    int[] xCoordinates = {1,3,5,7};
 	    int[] yCoordinates = {1,1,1,1};
 	    int[] sizes = {2,3,4,5};
@@ -61,7 +62,7 @@ public class GridTest {
 
 	@Test
 	public void test_Grid_Ships_Hit_Greater_Than_Zero_Percentage() throws Exception {
-	    String[] directions = {Ship.DIRECTION_LEFT,Ship.DIRECTION_LEFT,Ship.DIRECTION_LEFT,Ship.DIRECTION_LEFT};
+	    String[] directions = {GameUtil.DIRECTION_LEFT,GameUtil.DIRECTION_LEFT,GameUtil.DIRECTION_LEFT,GameUtil.DIRECTION_LEFT};
 	    int[] xCoordinates = {1,3,5,7};
 	    int[] yCoordinates = {1,1,1,1};
 	    int[] sizes = {2,3,4,5};
@@ -82,7 +83,7 @@ public class GridTest {
 
 	@Test
 	public void test_Grid_Ships_Hit_Hundred_Percentage() throws Exception {
-	    String[] directions = {Ship.DIRECTION_LEFT,Ship.DIRECTION_LEFT,Ship.DIRECTION_LEFT,Ship.DIRECTION_LEFT};
+	    String[] directions = {GameUtil.DIRECTION_LEFT,GameUtil.DIRECTION_LEFT,GameUtil.DIRECTION_LEFT,GameUtil.DIRECTION_LEFT};
 	    int[] xCoordinates = {1,3,5,7};
 	    int[] yCoordinates = {1,1,1,1};
 	    int[] sizes = {2,3,4,5};

@@ -5,11 +5,6 @@ import java.util.Set;
 
 public class Ship {
 	
-	public static String DIRECTION_LEFT = "LEFT";
-	public static String DIRECTION_BOTTOM = "BOTTOM";
-	public static String DIRECTION_TOP = "TOP";
-	public static String DIRECTION_RIGHT = "RIGHT";
-	
 	private Set<Location> locations;
 	private String direction;
 	private int length;
@@ -28,24 +23,24 @@ public class Ship {
 			locations = new HashSet<Location>();
 		}
 		if(direction == null) {
-			direction = DIRECTION_LEFT;
+			direction = GameUtil.DIRECTION_LEFT;
 		}
 		if(length == 0 || headX < 1 || headX > 10 || headY < 1 || headY > 10) {
 			return false;
 		}
 		for(int i = 0, x = headX,y=headY;i<length;i++) {
 			if(i > 0) {
-				if(direction == DIRECTION_LEFT) {
+				if(direction == GameUtil.DIRECTION_LEFT) {
 					y++;
-				}else if(direction == DIRECTION_RIGHT) {
+				}else if(direction == GameUtil.DIRECTION_RIGHT) {
 					y--;
-				}else if(direction == DIRECTION_TOP) {
+				}else if(direction == GameUtil.DIRECTION_TOP) {
 					x++;
-				}else if(direction == DIRECTION_BOTTOM) {
+				}else if(direction == GameUtil.DIRECTION_BOTTOM) {
 					x--;
 				}else {
 					// soft validation for unknown / unrecognized value
-					direction = DIRECTION_LEFT;
+					direction = GameUtil.DIRECTION_LEFT;
 					y++;
 				}
 			}

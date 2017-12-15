@@ -8,8 +8,15 @@ import java.util.Set;
 public class Grid {
 	
 	private List<Ship> ships;
-	private Set<Location> unoccupiedLocations;
 
+	/**
+	 * Set up the ships for the Grid.
+	 * @param directions
+	 * @param headXCoordinates
+	 * @param headYCoordinates
+	 * @param shipSizes
+	 * @return
+	 */
 	public boolean setupShips(String[] directions, int[] headXCoordinates, int[] headYCoordinates, int[] shipSizes) {
 		Set<Location> shipOccupiedLocations = new HashSet<Location>();
 		if(ships == null) {
@@ -30,20 +37,21 @@ public class Grid {
 		return true;
 	}
 
-	public void hit(int x, int y) {
-		boolean shipWasHit = false;
+	/**
+	 * Check if the ship is hit.
+	 * @param x
+	 * @param y
+	 * @return
+	 */
+	public boolean hit(int x, int y) {
 		for(Ship ship : ships) {
 			if(ship.hit(x, y)) {
-				shipWasHit = true;
-				break;
+				System.out.println("SUCCESS !!! YOU HIT THE SHIP.");
+				return true;
 			}
 		}
-		if(!shipWasHit) {
-			if(unoccupiedLocations == null) {
-				unoccupiedLocations = new HashSet<Location>();
-			}
-			unoccupiedLocations.add(new Location(x, y, true));
-		}
+		System.out.println("MISSED.");
+		return false;
 	}
 	
 	public boolean areShipsCompletelyHit() {
@@ -56,11 +64,12 @@ public class Grid {
 	}
 	
 	public void printHitPercentageOfAllShips() {
-		System.out.println("Hit % for ships : ");
+		System.out.print("Hit % for ships : ");
 		for(Ship ship : ships) {
 			System.out.print(ship.getHitPercentage());
 			System.out.print(" , ");
 		}
+		System.out.println("");
 	}
 
 	public List<Ship> getShips() {
@@ -71,18 +80,12 @@ public class Grid {
 		this.ships = ships;
 	}
 
-	public Set<Location> getUnoccupiedLocations() {
-		return unoccupiedLocations;
-	}
-
-	public void setUnoccupiedLocations(Set<Location> unoccupiedLocations) {
-		this.unoccupiedLocations = unoccupiedLocations;
-	}
+//	public Set<Location> getUnoccupiedLocations() {
+//		return unoccupiedLocations;
+//	}
+//
+//	public void setUnoccupiedLocations(Set<Location> unoccupiedLocations) {
+//		this.unoccupiedLocations = unoccupiedLocations;
+//	}
 	
-	public void addUnoccupiedLocation(Location location) {
-		if(unoccupiedLocations == null) {
-			unoccupiedLocations = new HashSet<Location>();
-		}
-		unoccupiedLocations.add(location);
-	}
 }
